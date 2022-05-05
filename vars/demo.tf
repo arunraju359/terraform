@@ -29,3 +29,12 @@ output "sample-list" {
   
 }
 
+variable City{}
+output City{
+
+    value = "My city is ${var.City}"
+
+    
+}
+
+
