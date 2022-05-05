@@ -17,8 +17,8 @@ output "number"{
 
 variable "sample-list"{
     default = [
-        "DevOps"
-        "Arun"
+        "DevOps",
+        "Arun",
         "Uk"
 
     ]
