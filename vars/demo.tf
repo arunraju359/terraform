@@ -25,7 +25,7 @@ variable "sample-list"{
 }
 
 output "sample-list" {
-    value = "welcome ${var.sample-list[0]}"
+    value = "welcome to ${var.sample-list[0]} position ${var.sample-list[2]} ${var.sample-list[1]}"
   
 }
 
