@@ -14,3 +14,18 @@ variable "number"{
 output "number"{
     value = var.number
 }
+
+variable "sample-list"{
+    default = [
+        "DevOps"
+        "Arun"
+        "Uk"
+
+    ]
+}
+
+output "sample-list" {
+    value = "welcome ${var.sample-list[0]}"
+  
+}
+
