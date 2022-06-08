@@ -5,7 +5,7 @@
 resource "aws_instance" "sample" {
   ami                     = "ami-0022f774911c1d690"
   instance_type           = "t2.micro"
-  security_group        = [aws_security_group.allow_ssh]
+  security_groups        = [aws_security_group.allow_ssh]
 
 
   tags = {
