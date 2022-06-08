@@ -29,7 +29,9 @@ output "sample-list" {
   
 }
 
-variable City{}
+variable City{
+    default="Hosur"
+}
 output City{
 
     value = "My city is ${var.City}"
