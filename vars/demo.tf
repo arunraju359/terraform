@@ -38,5 +38,9 @@ output City{
 
     
 }
+variable State{}
+output "state"{
+    value = "the current state is ${var.State}"
+}
 
 
