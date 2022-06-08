@@ -8,6 +8,6 @@ resource "aws_instance" "sample" {
 
 
   tags = {
-    Name = "My-First-Terraform"
+    Name = "Test-Machine"
   }
 }
