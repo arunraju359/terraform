@@ -30,7 +30,7 @@ output "sample-list" {
 }
 
 variable City{
-    default="Hosur"
+    
 }
 output City{
 
