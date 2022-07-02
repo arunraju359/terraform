@@ -34,7 +34,7 @@ variable City{
 }
 output City{
 
-    value = "My city is ${var.City}"
+    value = "${var.City}"
 
     
 }
