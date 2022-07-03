@@ -7,5 +7,6 @@ terraform {
     bucket = "mybucket-for-state"
     key    = "dev/tform/terraform.tfstate"
     region = "us-east-1"
+    dynamodb_table = "TF_Lock"
   }
 }
