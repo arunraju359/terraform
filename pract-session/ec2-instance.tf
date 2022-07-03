@@ -1,7 +1,7 @@
 resource "aws_instance" "web" {
   ami           = "ami-0cff7528ff583bf9a"
   instance_type = "t2.micro"
-  vpc_security_group_ids = "allow_SSH"
+  vpc_security_group_ids = [aws_security_group.allow_SSH.id]
 
   tags = {
     Name = "HelloWorld"
