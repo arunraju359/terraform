@@ -19,6 +19,21 @@ resource "aws_instance" "web" {
     host     = "${aws_instance.web.private_ip}"
   }
 }
+  provisioner "remote-exec" {
+    inline = [
+      "chmod 600 /home/ec2-user/.ssh/id_rsa",
+      "sudo yum install git -y",
+      "sudo amazon-linux-extras install ansible2 -y"
+      "ansible-pull -U https://github.com/arunraju359/ansible-roles.git stack.yaml"
+    ]
+  connection {
+    type     = "ssh"
+    user     = "ec2-user"
+    private_key = "${file("/home/ec2-user/.ssh/id_rsa")}"
+    host     = "${aws_instance.web.private_ip}"
+  }
+
+  }
 }
 
 
