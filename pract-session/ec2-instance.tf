@@ -7,7 +7,20 @@ resource "aws_instance" "web" {
   tags = {
     Name = "HelloWorld"
   }
+  
+  provisioner "file" {
+  source      = "/home/ec2-user/.ssh/id_rsa"
+  destination = "/home/ec2-user/.ssh/id_rsa"
+
+  connection {
+    type     = "ssh"
+    user     = "ec2-user"
+    private_key = "${file("/home/ec2-user/.ssh/id_rsa")}"
+    host     = "${aws_instance.web.private_ip}"
+  }
 }
+}
+
 
 resource "aws_security_group" "allow_SSH" {
   name        = "allow_SSH"
@@ -18,6 +31,14 @@ resource "aws_security_group" "allow_SSH" {
     description      = "TLS from VPC"
     from_port        = 22
     to_port          = 22
+    protocol         = "tcp"
+    cidr_blocks      = ["0.0.0.0/0"]
+    ipv6_cidr_blocks = ["::/0"]
+  }
+    ingress {
+    description      = "TLS from VPC"
+    from_port        = 80
+    to_port          = 80
     protocol         = "tcp"
     cidr_blocks      = ["0.0.0.0/0"]
     ipv6_cidr_blocks = ["::/0"]
