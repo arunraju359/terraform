@@ -24,7 +24,7 @@ resource "aws_instance" "web" {
       "chmod 600 /home/ec2-user/.ssh/id_rsa",
       "sudo yum install git -y",
       "sudo amazon-linux-extras install ansible2 -y",
-      "ansible-pull -U https://github.com/arunraju359/ansible-roles.git stack.yaml",
+      "ansible-pull -U https://github.com/arunraju359/ansible-roles.git stack.yaml -e DBUSER=student -e DBPASS=student1 -e DBNAME=studentapp",
     ]
   connection {
     type     = "ssh"
