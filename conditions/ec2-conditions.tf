@@ -37,5 +37,5 @@ resource "aws_instance" "sample2" {
   }
 }
 variable "condition-2"{
-    default="false"
+    default="true"
 }
