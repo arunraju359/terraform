@@ -24,7 +24,7 @@ variable "condition-1"{
     default="false"
 }
 
-resource "aws_instance" "sample" {
+resource "aws_instance" "sample2" {
   ami                     = "ami-0022f774911c1d690"
   instance_type           = "t2.micro"
   count=                    var.condition-2 ? 1 : 0
