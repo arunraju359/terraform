@@ -13,7 +13,7 @@ resource "aws_instance" "sample" {
   instance_type           = "t2.micro"
   count=                    var.condition-1 ? 1 : 0
   key_name          = "aws-devops-learn-22"
-  count = 
+  
 
 
   tags = {
@@ -29,7 +29,7 @@ resource "aws_instance" "sample" {
   instance_type           = "t2.micro"
   count=                    var.condition-2 ? 1 : 0
   key_name          = "aws-devops-learn-22"
-  count = 
+  
 
 
   tags = {
