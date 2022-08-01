@@ -1,3 +1,7 @@
 output "sample" {
-    value = "Hello world"
+    value = var.number
+}
+
+variable "number"{
+    default = "1234"
 }
