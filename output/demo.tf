@@ -1,7 +1,9 @@
 output "sample" {
-    value = var.number
+    value = "My city is  ${var.City}"
 }
-
-variable "number"{
-    default = "1234"
+variable "City" {
+  
 }
+#variable "number"{
+ #   default = "1234"
+#}
