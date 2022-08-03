@@ -10,7 +10,7 @@ resource "aws_instance" "sample" {
 
 
   tags = {
-    Name = "Test-Machine"
+    Name = "Test-Machine-for-remote-st-file"
   }
 }
 resource "aws_security_group" "allow_ssh" {
