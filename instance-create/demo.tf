@@ -5,7 +5,7 @@
 resource "aws_instance" "sample" {
   ami                     = "ami-0022f774911c1d690"
   instance_type           = "t2.micro"
-  vpc_security_group_ids       = [aws_security_group.allow_ssh.id]
+  vpc_security_group_ids       = [aws_security_group.allow_ssh_1.id]
   key_name          = "newKey"
 
 
@@ -13,8 +13,8 @@ resource "aws_instance" "sample" {
     Name = "Test-Machine-for-remote-st-file"
   }
 }
-resource "aws_security_group" "allow_ssh" {
-  name        = "allow_ssh_tf"
+resource "aws_security_group" "allow_ssh_1" {
+  name        = "allow_ssh_tf_1"
   description = "Allow ssh inbound traffic"
   
 
