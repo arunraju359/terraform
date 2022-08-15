@@ -13,5 +13,6 @@ resource "aws_nat_gateway" "example" {
   tags = {
     Name = "gw NAT"
   }
+  depends_on = [aws_internet_gateway.gw]
 }
 
