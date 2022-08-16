@@ -15,7 +15,7 @@ resource "aws_route_table" "private" {
 
   route {
     cidr_block = "0.0.0.0/0"
-    gateway_id = aws_internet_gateway.natgw.id
+    gateway_id = aws_nat_gateway.natgw.id
   }
    tags = {
     Name = "${var.PROJECT_NAME}-${var.ENV}-private-rt"
