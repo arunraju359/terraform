@@ -13,7 +13,7 @@ resource "aws_eip" "eip" {
 
 resource "aws_nat_gateway" "natgw" {
   allocation_id = aws_eip.eip.id
-  subnet_id     = aws_subnet.public.*.id[0]
+  subnet_id     = aws_subnet.public.*.id[1]
 
   tags = {
     Name = "${var.PROJECT_NAME}-${var.ENV}-natgw"
